@@ -1,0 +1,98 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+block title
+	title title
+
+block pagecontent
+	+header()
+	.main-wrapper#fullpage.swiper-container
+			 
+		.swiper-wrapper
+			//- - for (var x = 0; x < 3; x++)
+				
+			+b.s-section--1.swiper-slide
+				.container
+					+b.front-city--back
+						img(src="img/city-back.svg", alt="")
+					+b.moon-block
+						img(src="img/moon.svg", alt="")
+					
+					+b.cat--1
+						img(src="img/cat-1.png", alt="")
+					.front-city
+						img(src="img/city-front.svg", alt="")
+					
+					
+					+b.ray--up
+						img(src="img/ray-up.png", alt="")
+						+b.ray--down
+							img(src="img/ray-down.png", alt="")
+			+b.s-section--2.swiper-slide
+				.container
+					+b.wall
+						+b.cat--3
+							img(src="img/cat-3.png", alt="")
+						img(src="img/wall.png", alt="")
+					+b.room--1
+						img(src="img/room-1.jpg", alt="")
+						+b.pictures
+							+e.item
+								img(src="img/item.jpg", alt="")
+							+e.item
+								img(src="img/item.jpg", alt="")
+							+e.item
+								img(src="img/item.jpg", alt="")
+							+e.item
+								img(src="img/item.jpg", alt="")
+						+b.cat--2
+							img(src="img/cat-2.svg", alt="")
+						+b.tv
+							img(src="img/tv.png", alt="")
+
+					+b.window
+						img(src="img/window.png", alt="")
+					+b.back-city
+						img(src="img/city-back--2.svg", alt="")
+					
+					//- +b.cat--2
+					//- 	img(src="img/cat-2.svg", alt="")
+					
+			+b.s-section--3.swiper-slide
+			
+			+b.s-section--4.swiper-slide
+				.container
+					+b.wall
+						 
+						img(src="img/wall.png", alt="")
+					+b.room--2
+						img(src="img/room-2.jpg", alt="")
+					
+					+b.window
+						img(src="img/window-2.png", alt="")
+						+e.inner
+							.slider-wrapper
+								+b.slider--js.swiper-container 
+									.swiper-wrapper
+										- for (var x = 0; x < 5; x++)
+											.swiper-slide
+												+e.item.img-bg(style="background-image: url(img/slide.png);")
+													img(src="img/slide.png", alt="")
+									+arrow()
+							+b.cat--4
+								img(src="img/cat-4.svg", alt="")
+					+b.back-city--4
+						img(src="img/city-back--2.svg", alt="")
+					
+					//- +b.cat--2
+					//- 	img(src="img/cat-2.svg", alt="")
+					
+			+b.s-section--5.swiper-slide
+
+				//- .container
+					
+					
+		
