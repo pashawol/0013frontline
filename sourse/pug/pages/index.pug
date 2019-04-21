@@ -41,13 +41,21 @@ block pagecontent
 						img(src="img/room-1.jpg", alt="")
 						+b.pictures
 							+e.item
-								img(src="img/item.jpg", alt="")
+								+e.item-inner--front
+								+e.item-inner--back
+									img(src="img/item.jpg", alt="")
 							+e.item
-								img(src="img/item.jpg", alt="")
+								+e.item-inner--front
+								+e.item-inner--back
+									img(src="img/item.jpg", alt="")
 							+e.item
-								img(src="img/item.jpg", alt="")
+								+e.item-inner--front
+								+e.item-inner--back
+									img(src="img/item.jpg", alt="")
 							+e.item
-								img(src="img/item.jpg", alt="")
+								+e.item-inner--front
+								+e.item-inner--back
+									img(src="img/item.jpg", alt="")
 						+b.cat--2
 							img(src="img/cat-2.svg", alt="")
 						+b.tv
@@ -91,6 +99,80 @@ block pagecontent
 					//- 	img(src="img/cat-2.svg", alt="")
 					
 			+b.s-section--5.swiper-slide
+			
+			+b.s-section--6.swiper-slide
+				.container 
+					+b.room--6
+						img(src="img/room-3.jpg", alt="")
+						+b.servises
+							+e.row
+								+e.col--aside.--left
+									+e.item--sm(data-title="Текст заголовка  название   услуги услуги "  data-text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni odit quisquam illo similique? Esse blanditiis perferendis, totam nobis ipsam saepe sapiente odit asperiores nisi animi voluptatibus debitis. ")
+										img(src="img/servises-1.svg", alt="")
+									
+									+e.item--sm(data-title="Текст заголовка  название   услуги услуги "  data-text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis opti nsectetur maiores itaque numquam, magni odit quisquam illo similique? Esse blanditiis perferendis, totam nobis ipsam saepe sapiente odit asperiores nisi animi voluptatibus debitis. ")
+										img(src="img/servises-2.svg", alt="")
+									
+									+e.item--sm(data-title="Текст заголовка  название   услуги услуги "  data-text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum cons ectetur maiores itaque numquam, magni odit quisquam illo similique? Esse blanditiis perferendis, totam nobis ipsam saepe sapiente odit asperiores nisi animi voluptatibus debitis. ")
+										img(src="img/servises-3.svg", alt="")
+									
+								+e.col--center
+									+e.item--center
+								+e.col--aside.--right
+									+e.item--sm(data-title="Текст заголовка  название   услуги услуги "  data-text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio ius atur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni odit quisquam illo similique? Esse blanditiis perferendis, totam nobis ipsam saepe sapiente odit asperiores nisi animi voluptatibus debitis. ")
+										img(src="img/servises-4.svg", alt="")
+									
+									+e.item--sm(data-title="Текст заголовка  название   услуги услуги "  data-text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil l res itaque numquam, magni odit quisquam illo similique? Esse blanditiis perferendis, totam nobis ipsam saepe sapiente odit asperiores nisi animi voluptatibus debitis. ")
+										img(src="img/servises-5.svg", alt="")
+									
+									+e.item--sm(data-title="Текст заголовка  название   услуги услуги "  data-text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis uam, magni odit quisquam illo similique? Esse blanditiis perferendis, totam nobis ipsam saepe sapiente odit asperiores nisi animi voluptatibus debitis. ")
+										img(src="img/servises-5.svg", alt="")
+									
+								
+						+b.cat--6
+							img(src="img/cat-6.png", alt="")
+							
+						+b.blinds
+							img(src="img/blinds.png", alt="")
+							
+					+b.window--6
+						img(src="img/window-3.png", alt="")
+						+e.inner
+						  
+					
+					//- +b.cat--2
+					//- 	img(src="img/cat-2.svg", alt="")
+					
+			+b.s-section--7.swiper-slide 
+				+b.stand
+					img(src="img/stand.png", alt="")
+					+b.map-wrap
+						+e.text-block
+							+e.logo
+								img(src="img/logo.svg", alt="")
+							+e.group
+								+e.icon-wrap
+									+icon('mark')
+								+e.text 127083, Москва, Петровско-Разумовский пр-д, 13/2, офис 13
+							
+							+e.group
+								+e.icon-wrap
+									+icon('tel')
+								+e.text
+									a(href="tel:+7(495)642 24 00") +7 (495) 642 24 00
+							
+							+e.group
+								+e.icon-wrap
+									+icon('email')
+								+e.text
+									a(href="mailto:info@frontcreative.ru") info@frontcreative.ru 
+
+							
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2242.796123518925!2d37.56526441606113!3d55.796777996066716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549ef0e553d3d%3A0xf065f2263ede5394!2z0J_QtdGC0YDQvtCy0YHQutC-LdCg0LDQt9GD0LzQvtCy0YHQutC40Lkg0L_RgC3QtCwgMTMg0LrQvtGA0L_Rg9GBIDIsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMjcwODM!5e0!3m2!1sru!2sby!4v1555881177404!5m2!1sru!2sby" width="600" height="450" style="border:0" allowfullscreen></iframe>
+					+b.cat--7
+						img(src="img/cat-7.png", alt="")
+						
+						
 
 				//- .container
 					

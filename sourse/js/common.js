@@ -88,48 +88,48 @@ var JSCCommon = {
 
 
 
-	// magnificPopupCall: function () {
-	// 	$('.popup-with-move-anim').magnificPopup({
-	// 		type: 'inline',
+	magnificPopupCall: function () {
+		$('.popup-with-move-anim').magnificPopup({
+			type: 'inline',
 
-	// 		fixedContentPos: true,
-	// 		fixedBgPos: true,
+			fixedContentPos: true,
+			fixedBgPos: true,
 
-	// 		overflowY: 'auto',
+			overflowY: 'auto',
 
-	// 		closeBtnInside: true,
-	// 		preloader: false,
+			closeBtnInside: true,
+			preloader: false,
 
-	// 		midClick: true,
-	// 		removalDelay: 300,
-	// 		mainClass: 'my-mfp-zoom-in',
-	// 		tClose: 'Закрыть (Esc)',
-	// 	});
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in',
+			tClose: 'Закрыть (Esc)',
+		});
 
-	// 	// / modal window
+		// / modal window
 
-	// 	// modal галерея
-	// 	$(".gal").each(function () {
+		// modal галерея
+		$(".gal").each(function () {
 
-	// 		$(this).find("a").magnificPopup({
-	// 			type: 'image',
-	// 			closeOnContentClick: false,
-	// 			closeBtnInside: false,
-	// 			mainClass: 'mfp-with-zoom mfp-img-mobile',
-	// 			tClose: 'Закрыть (Esc)',
-	// 			image: {
-	// 				verticalFit: true,
-	// 				// titleSrc: function(item) {
-	// 				//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-	// 				// }
-	// 			},
-	// 			gallery: {
-	// 				enabled: true
-	// 			}
-	// 		});
-	// 	})
-	// 	// /modal галерея
-	// },
+			$(this).find("a").magnificPopup({
+				type: 'image',
+				closeOnContentClick: false,
+				closeBtnInside: false,
+				mainClass: 'mfp-with-zoom mfp-img-mobile',
+				tClose: 'Закрыть (Esc)',
+				image: {
+					verticalFit: true,
+					// titleSrc: function(item) {
+					//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+					// }
+				},
+				gallery: {
+					enabled: true
+				}
+			});
+		})
+		// /modal галерея
+	},
 
 	// mobileMenu: function () {
 	// 	// закрыть/открыть мобильное меню
@@ -183,64 +183,7 @@ var JSCCommon = {
 	// 	});
 	// },
 
-
-	
-
-	// inlineSVG: function () {
-	// 	//Replace all SVG images with inline SVG
-	// 	$('img.img-svg').each(function () {
-	// 		var $img = $(this);
-	// 		var imgClass = $img.attr('class');
-	// 		var imgURL = $img.attr('src');
-
-	// 		$.get(imgURL, function (data) {
-	// 			// Get the SVG tag, ignore the rest
-	// 			var $svg = $(data).find('svg');
-
-	// 			// Add replaced image's classes to the new SVG
-	// 			if (typeof imgClass !== 'undefined') {
-	// 				$svg = $svg.attr('class', imgClass + ' replaced-svg');
-	// 			}
-
-	// 			// Remove any invalid XML tags as per http://validator.w3.org
-	// 			$svg = $svg.removeAttr('xmlns:a');
-
-	// 			// Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-	// 			if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-	// 				$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-	// 			}
-
-
-	// 			// Replace image with new SVG
-	// 			$img.replaceWith($svg);
-
-	// 		}, 'xml');
-
-	// 	});
-	// },
-
-	// CustomInputFile: function CustomInputFile() {
-	// 	var file = $(".add-file input[type=file]");
-	// 	file.change(function () {
-	// 		var filename = $(this).val().replace(/.*\\/, "");
-	// 		var name = $(".add-file__filename  ");
-	// 		name.text(filename);
-
-	// 	});
-	// },
-
-	// CustomYoutubeBlock: function () {
-	// 	$(".pretty-embed__bg").each(function () {
-	// 		// загрузка фона видео
-	// 		$(this).css("background-image", 'url(http://img.youtube.com/vi/' + $(this).data("src") + '/0.jpg)')
-	// 		// включение видео при клике по блоку
-	// 		$(this).click(function () {
-	// 			$(this).removeClass("on").next()
-	// 				.attr("src", 'https://www.youtube.com/embed/' + $(this).data("src") + '?autoplay=1').addClass("on");
-	// 		})
-	// 	})
-
-	// },
+ 
 
 	inputMask: function () {
 		// mask for input
@@ -256,13 +199,15 @@ jQuery(document).ready(function ($) {
 
  
 	
+	JSCCommon.magnificPopupCall();
 	JSCCommon.inputMask();
  
 	var swiper = new Swiper('#fullpage', { 
 		slidesPerView: "auto",
 		freeMode: true, 
 		mousewheel: true,
-		// initialSlide: 1,
+		keyboard: true,
+		// initialSlide: 6,
 		on: {
 			init: function () {
 				/* do something */
@@ -309,6 +254,33 @@ jQuery(document).ready(function ($) {
 				$(".cat--3").removeClass("cat--down");
 			}, 200);
 		}
+		
+		if (swiper.activeIndex == 5) {
+			setTimeout(() => {
+				
+				$(".blinds").addClass("blinds--hidden");
+			}, 200);
+		}  
+		else{ 
+			setTimeout(() => {
+				
+				$(".blinds").removeClass("blinds--hidden");
+			}, 200);
+		}
+		
+		
+		if (swiper.activeIndex == 6) {
+			setTimeout(() => {
+				
+				$(".stand").addClass("stand--active");
+			}, 200);
+		}  
+		else{ 
+			setTimeout(() => {
+				
+				$(".stand").removeClass("stand--active");
+			}, 200);
+		}
 
 
 		// console.log('slide changed');
@@ -325,6 +297,44 @@ jQuery(document).ready(function ($) {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
+	})
+
+
+	$(".servises__item--sm").click(function(){
+		$('.servises__item--center')
+		.html('<div class="servises__item-body">\
+						<div class="servises__item-head">\
+							<div class="servises__img-wrap">\
+								<img src="'+$(this).find('img').attr("src")+'">\
+								</div>\
+								<div class="servises__title">'+$(this).data("title")+'</div>\
+							</div>\
+							<div class="servises__text type-wrap" data-text="' + $(this).data("text") + '">\
+							<span class="type"> </span></div>\
+						</div>')
+						$(".type-wrap").each(function(){
+
+			var th = $(this).data("text");
+				// $(this).find(".type").waypoint(function(){   
+				$(this).find(".type").typed({
+					strings: [th],
+					typeSpeed: 5,
+					fadeOutDelay: 5,
+					startDelay: 50,
+					cursorChar: "<span class='cursor'>",  
+					 
+					onStringTyped: function() { 
+						$(".typed-cursor").fadeOut();
+						}  
+					}) 
+				// },
+				//   {
+						
+				//   offset: '90%'
+				//   }
+				//   )
+		
+				});
 	})
 });
 

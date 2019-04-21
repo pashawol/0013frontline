@@ -462,6 +462,22 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			width: calc(5vw  + #{rem(1500px)});
 			// left: 0;
 		}
+		
+		&--5{
+			width: calc(.1vw  + #{rem(50px)});
+			// left: 0;
+		}
+		
+		&--6{
+			width: calc(#{rem(1670 )}   );
+			z-index: 2;
+		}
+			
+		&--7{
+			width: calc(#{rem(1860 )}   );
+			// z-index: 2;
+		}
+
 
 
 }
