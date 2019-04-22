@@ -13,10 +13,24 @@
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
-    <!-- start HEADER.header-->
-    <header class="header">
-    </header>
-    <!-- end HEADER.header-->
+    <!-- start top-nav-->
+    <div class="top-nav">
+      <div class="container">
+        <div class="top-nav__logo"><img src="img/logo.svg" alt=""/>
+        </div>
+        <ul class="top-nav__nav">
+          <li class="top-nav__item"><a class="top-nav__link top-nav__link--js" href="#" data-slide="1">о нас</a>
+          </li>
+          <li class="top-nav__item"><a class="top-nav__link top-nav__link--js" href="#" data-slide="3">портфолио</a>
+          </li>
+          <li class="top-nav__item"><a class="top-nav__link top-nav__link--js" href="#" data-slide="5">услуги</a>
+          </li>
+          <li class="top-nav__item"><a class="top-nav__link top-nav__link--js" href="#" data-slide="6">контакты</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end top-nav-->
     <div class="main-wrapper swiper-container" id="fullpage">
       <div class="swiper-wrapper">
         <div class="s-section s-section--1 swiper-slide">
@@ -43,27 +57,43 @@
             <div class="room room--1"><img src="img/room-1.jpg" alt="">
               <div class="pictures">
                 <div class="pictures__item">
-                  <div class="pictures__item-inner pictures__item-inner--front">
-                  </div>
-                  <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
-                  </div>
-                </div>
-                <div class="pictures__item">
-                  <div class="pictures__item-inner pictures__item-inner--front">
-                  </div>
-                  <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                  <div class="flipper">
+                    <div class="pictures__item-inner pictures__item-inner--front" style="background-color: #A5BAD0;">Шеф
+                    </div>
+                    <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                      <div class="pictures__title">Имя Фамилия
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="pictures__item">
-                  <div class="pictures__item-inner pictures__item-inner--front">
-                  </div>
-                  <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                  <div class="flipper">
+                    <div class="pictures__item-inner pictures__item-inner--front" style="background-color: #7EA37E;">Креатив
+                    </div>
+                    <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                      <div class="pictures__title">Имя Фамилия
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="pictures__item">
-                  <div class="pictures__item-inner pictures__item-inner--front">
+                  <div class="flipper">
+                    <div class="pictures__item-inner pictures__item-inner--front" style="background-color: #A5BAD0;">Печать
+                    </div>
+                    <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                      <div class="pictures__title">Имя Фамилия
+                      </div>
+                    </div>
                   </div>
-                  <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                </div>
+                <div class="pictures__item">
+                  <div class="flipper">
+                    <div class="pictures__item-inner pictures__item-inner--front" style="background-color: #E88378;">Дизайн
+                    </div>
+                    <div class="pictures__item-inner pictures__item-inner--back"><img src="img/item.jpg" alt="">
+                      <div class="pictures__title">Имя Фамилия
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -72,7 +102,7 @@
               <div class="tv"><img src="img/tv.png" alt="">
               </div>
             </div>
-            <div class="window"><img src="img/window.png" alt="">
+            <div class="window window--1"><img src="img/window.png" alt="">
             </div>
             <div class="back-city"><img src="img/city-back--2.svg" alt="">
             </div>
@@ -91,25 +121,15 @@
                 <div class="slider-wrapper">
                   <div class="slider slider--js swiper-container"> 
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="slider__item img-bg" style="background-image: url(img/slide.png);"><img src="img/slide.png" alt="">
-                        </div>
+                      <div class="swiper-slide"><a class="slider__item img-bg popup-with-move-anim" href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni"><img src="img/slide.png" alt=""></a>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="slider__item img-bg" style="background-image: url(img/slide.png);"><img src="img/slide.png" alt="">
-                        </div>
+                      <div class="swiper-slide"><a class="slider__item img-bg popup-with-move-anim" href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni"><img src="img/slide.png" alt=""></a>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="slider__item img-bg" style="background-image: url(img/slide.png);"><img src="img/slide.png" alt="">
-                        </div>
+                      <div class="swiper-slide"><a class="slider__item img-bg popup-with-move-anim" href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni"><img src="img/slide.png" alt=""></a>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="slider__item img-bg" style="background-image: url(img/slide.png);"><img src="img/slide.png" alt="">
-                        </div>
+                      <div class="swiper-slide"><a class="slider__item img-bg popup-with-move-anim" href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni"><img src="img/slide.png" alt=""></a>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="slider__item img-bg" style="background-image: url(img/slide.png);"><img src="img/slide.png" alt="">
-                        </div>
+                      <div class="swiper-slide"><a class="slider__item img-bg popup-with-move-anim" href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni"><img src="img/slide.png" alt=""></a>
                       </div>
                     </div>
                     <div class="swiper-button-hand swiper-button-hand-next swiper-button-next"></div>
@@ -205,6 +225,29 @@
         </div>
       </div>
     </div>
+    <div class="zoom-anim-dialog mfp-hide modal-win modal-form" id="modal-img">
+      <div class="text-center">
+        <div class="title h3 ttu">Обратный звонок
+        </div>
+        <p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+      </div>
+      <div class="input-wrap form-group">
+        <label><span class="title">text</span><input class="input form-control" type="Ваше Имя" required="required"/>
+        </label>
+      </div>
+      <!-- +e.input-wrap-->
+      <div class="input-wrap form-group">
+        <label><span class="title">tel</span><input class="input form-control" type="Ваш телефон" required="required"/>
+        </label>
+      </div>
+      <!-- +e.input-wrap--><input class="btn btn btn-block btn-warning mb-4" type="submit" value="Рассчитать"/>
+      <div class="polite">
+        <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+        </label>
+      </div>
+    </div>
+    <!-- #modal-img-->
+    <!-- modal-->
     <script src="js/jquery.min.js"></script>
     <script src="libs/magnificPopup/jquery.magnific-popup.min.js"></script>
     <script src="libs/swiper/swiper.min.js"></script>

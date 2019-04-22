@@ -8,7 +8,8 @@ block title
 	title title
 
 block pagecontent
-	+header()
+	//- +header()
+	+top-nav
 	.main-wrapper#fullpage.swiper-container
 			 
 		.swiper-wrapper
@@ -40,28 +41,32 @@ block pagecontent
 					+b.room--1
 						img(src="img/room-1.jpg", alt="")
 						+b.pictures
-							+e.item
-								+e.item-inner--front
+							+e.item: .flipper
+								+e.item-inner--front(style="background-color: #A5BAD0;") Шеф
 								+e.item-inner--back
 									img(src="img/item.jpg", alt="")
-							+e.item
-								+e.item-inner--front
+									+e.title Имя Фамилия
+							+e.item: .flipper
+								+e.item-inner--front(style="background-color: #7EA37E;") Креатив
 								+e.item-inner--back
 									img(src="img/item.jpg", alt="")
-							+e.item
-								+e.item-inner--front
+									+e.title Имя Фамилия
+							+e.item: .flipper
+								+e.item-inner--front(style="background-color: #A5BAD0;") Печать
 								+e.item-inner--back
 									img(src="img/item.jpg", alt="")
-							+e.item
-								+e.item-inner--front
+									+e.title Имя Фамилия
+							+e.item: .flipper
+								+e.item-inner--front(style="background-color: #E88378;") Дизайн
 								+e.item-inner--back
 									img(src="img/item.jpg", alt="")
+									+e.title Имя Фамилия
 						+b.cat--2
 							img(src="img/cat-2.svg", alt="")
 						+b.tv
 							img(src="img/tv.png", alt="")
 
-					+b.window
+					+b.window--1
 						img(src="img/window.png", alt="")
 					+b.back-city
 						img(src="img/city-back--2.svg", alt="")
@@ -87,7 +92,7 @@ block pagecontent
 									.swiper-wrapper
 										- for (var x = 0; x < 5; x++)
 											.swiper-slide
-												+e.item.img-bg(style="background-image: url(img/slide.png);")
+												+e.item.img-bg.popup-with-move-anim(href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni")
 													img(src="img/slide.png", alt="")
 									+arrow()
 							+b.cat--4

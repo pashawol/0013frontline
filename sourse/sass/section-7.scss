@@ -2,6 +2,7 @@
  .s-section--7{
   background-image: url(../img/bg-contact.png);
   background-size: cover;
+  background-position: left top;
 }
 .contact-bg{
 
@@ -69,11 +70,11 @@
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
       border-radius: rem(15px);
       background-color: #eca220;
-      padding: rem(20) rem(20);
+      padding: rem(20) rem(30);
       .icon{
         font-size: rem(34);
         &-email{
-          font-size: rem(28);
+          font-size: rem(20);
 
         }
       }
@@ -83,14 +84,17 @@
       flex: 0 0 rem(40);
       width: rem(40);
       // flex-grow: 1;
-      margin-right: rem(40);
+      margin-right: rem(30);
       text-align: center;
     }
     &__group{
       padding-top: rem(10);
       padding-bottom: rem(10);
       display: flex;
-      border-bottom: 1px solid #000;
+      &:not(:last-child){
+
+        border-bottom: 1px solid #000;
+      }
       a{
         color: #000000 !important;
       }

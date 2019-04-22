@@ -1,188 +1,5 @@
 var JSCCommon = {
-	// часть вызов скриптов здесь, для использования при AJX
-	// LazyFunction: function () {
-	// 	// Для лэзи загрузки 
-
-	// 	document.addEventListener("DOMContentLoaded", function () {
-	// 		let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-	// 		let active = false;
-
-	// 		const lazyLoad = function () {
-	// 			if (active === false) {
-	// 				active = true;
-
-	// 				setTimeout(function () {
-	// 					lazyImages.forEach(function (lazyImage) {
-	// 						if (((lazyImage.getBoundingClientRect().top  - lazyImage.parentElement.clientHeight * 2)<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.parentElement.clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
-	// 							lazyImage.src = lazyImage.dataset.src;
-	// 							// lazyImage.srcset = lazyImage.dataset.srcset;
-	// 							lazyImage.classList.remove("lazy");
-
-	// 							lazyImages = lazyImages.filter(function (image) {
-	// 								return image !== lazyImage;
-	// 							});
-
-	// 							if (lazyImages.length === 0) {
-	// 								document.removeEventListener("scroll", lazyLoad);
-	// 								window.removeEventListener("resize", lazyLoad);
-	// 								window.removeEventListener("orientationchange", lazyLoad);
-	// 								window.addEventListener("DOMContentLoaded", lazyLoad);
-	// 							}
-	// 						}
-	// 					});
-
-	// 					active = false;
-	// 				}, 200);
-	// 			}
-	// 		};
-
-	// 		document.addEventListener("scroll", lazyLoad);
-	// 		window.addEventListener("resize", lazyLoad);
-	// 		window.addEventListener("orientationchange", lazyLoad);
-	// 		window.addEventListener("DOMContentLoaded", lazyLoad);
-	// 	});
-
-
-	// 	// лэзи 
-	// 	document.addEventListener("DOMContentLoaded", function () {
-	// 		let lazyImages = [].slice.call(document.querySelectorAll(".lazy-bg"));
-	// 		let active = false;
-
-	// 		const lazyLoad = function () {
-	// 			if (active === false) {
-	// 				active = true;
-
-	// 				setTimeout(function () {
-	// 					lazyImages.forEach(function (lazyImage) {
-	// 						if (((lazyImage.getBoundingClientRect().top - lazyImage.parentElement.clientHeight ) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.parentElement.clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
-	// 							lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
-	// 							lazyImage.src = lazyImage.dataset.src;
-	// 							// lazyImage.srcset = lazyImage.dataset.srcset;
-	// 							lazyImage.classList.remove("lazy");
-
-	// 							lazyImages = lazyImages.filter(function (image) {
-	// 								return image !== lazyImage;
-	// 							});
-
-	// 							if (lazyImages.length === 0) {
-	// 								document.removeEventListener("scroll", lazyLoad);
-	// 								window.removeEventListener("resize", lazyLoad);
-	// 								window.removeEventListener("orientationchange", lazyLoad);
-	// 								window.addEventListener("DOMContentLoaded", lazyLoad);
-	// 							}
-	// 						}
-	// 					});
-
-	// 					active = false;
-	// 				}, 200);
-	// 			}
-	// 		};
-
-	// 		document.addEventListener("scroll", lazyLoad);
-	// 		window.addEventListener("resize", lazyLoad);
-	// 		window.addEventListener("orientationchange", lazyLoad);
-	// 		window.addEventListener("DOMContentLoaded", lazyLoad);
-	// 	});
-
-	// },
-
-
-
-	magnificPopupCall: function () {
-		$('.popup-with-move-anim').magnificPopup({
-			type: 'inline',
-
-			fixedContentPos: true,
-			fixedBgPos: true,
-
-			overflowY: 'auto',
-
-			closeBtnInside: true,
-			preloader: false,
-
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in',
-			tClose: 'Закрыть (Esc)',
-		});
-
-		// / modal window
-
-		// modal галерея
-		$(".gal").each(function () {
-
-			$(this).find("a").magnificPopup({
-				type: 'image',
-				closeOnContentClick: false,
-				closeBtnInside: false,
-				mainClass: 'mfp-with-zoom mfp-img-mobile',
-				tClose: 'Закрыть (Esc)',
-				image: {
-					verticalFit: true,
-					// titleSrc: function(item) {
-					//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-					// }
-				},
-				gallery: {
-					enabled: true
-				}
-			});
-		})
-		// /modal галерея
-	},
-
-	// mobileMenu: function () {
-	// 	// закрыть/открыть мобильное меню
-	// 	var toggMnu = $(".toggle-menu-mobile--js").click(function () {
-
-	// 		$(".toggle-menu-mobile--js").toggleClass("on");
-	// 		// $("body").toggleClass("fixed");
-	// 		$(".menu-mobile--js").toggleClass("active");
-	// 		$("body, html").toggleClass("fixed");
-	// 		return false;
-	// 	});
-	// 	$('.menu-mobile--js ul li a').on('click', function () {
-	// 		$(".menu-mobile--js .toggle-mnu").click();
-	// 	});
-	// 	$(document).mouseup(function (e) {
-	// 		var container = $(".menu-mobile--js.active");
-	// 		if (container.has(e.target).length === 0) {
-	// 			$(".toggle-menu-mobile--js").removeClass("on");
-	// 			// $("body").toggleClass("fixed");
-	// 			$(".menu-mobile--js").removeClass("active");
-	// 			$("body, html").removeClass("fixed");
-	// 		}
-	// 	});
-	// 	// закрыть меню при горизонтальном свайпе
-	// 	$('.menu-mobile--js.active').swipe({
-	// 		swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-	// 			if (direction == 'left') {
-	// 				$(".toggle-menu-mobile--js").removeClass("on");
-	// 				$(".menu-mobile--js.active").removeClass("active");
-	// 				$("body, html").removeClass("fixed");
-	// 			}
-	// 			if (direction == 'right') {
-	// 				$(".toggle-menu-mobile--js").removeClass("on");
-	// 				$(".menu-mobile--js.active").removeClass("active");
-	// 				$("body, html").removeClass("fixed");
-	// 			}
-	// 		},
-	// 		triggerOnTouchEnd: false,
-	// 	});
-	// },
-
-
-	// // табы  . 
-	// tabscostume: function (tab) {
-	// 	$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-	// 		$(this)
-	// 			.addClass('active').siblings().removeClass('active')
-	// 			.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-	// 			.eq($(this).index()).fadeIn().addClass('active');
-
-	// 	});
-	// },
-
+	 
  
 
 	inputMask: function () {
@@ -199,7 +16,31 @@ jQuery(document).ready(function ($) {
 
  
 	
-	JSCCommon.magnificPopupCall();
+	$(document).on('click', ".popup-with-move-anim", function(e){
+		e.preventDefault();
+		var src = $(this).attr("href");
+		$(src).html('<div class="modal__body">\
+								<div class="modal__head">\
+									<img src="'+$(this).find('img').attr("src")+'">\
+								</div>\
+								<div class="modal__text  "  >' + $(this).data("text") + '</div>\
+							</div>');
+		$.magnificPopup.open({
+			items: {
+				src: src, // can be a HTML string, jQuery object, or CSS selector
+			},
+				type: 'inline',
+				fixedContentPos: true,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeOnContentClick: false,
+				closeBtnInside: true,
+				preloader: false,
+				removalDelay: 300,
+				tClose: 'Закрыть (Esc)',
+				mainClass: 'my-mfp-zoom-in',
+		})
+	})
 	JSCCommon.inputMask();
  
 	var swiper = new Swiper('#fullpage', { 
@@ -207,7 +48,7 @@ jQuery(document).ready(function ($) {
 		freeMode: true, 
 		mousewheel: true,
 		keyboard: true,
-		// initialSlide: 6,
+		// initialSlide: 3,
 		on: {
 			init: function () {
 				/* do something */
@@ -285,6 +126,12 @@ jQuery(document).ready(function ($) {
 
 		// console.log('slide changed');
 	});
+	$(".top-nav__link--js").click(function(e){
+		e.preventDefault();
+		var slide = $(this).data('slide');
+		swiper.slideTo(slide, 600, false);
+	})
+
 	var swiperCarusel = new Swiper('.slider--js', { 
 		slidesPerView: 3,
 		spaceBetween: 30,

@@ -32,7 +32,9 @@ mixin modal()
 	//- 			.h3 Скоро с Вами свяжутся
 	//- 			br 
 
-	+form-wrap()(id="modal-call" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
+
+	
+	div(id="modal-img" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
 		.text-center
 			+e.title.h3.ttu Обратный звонок
 			p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
@@ -42,5 +44,6 @@ mixin modal()
 		//- +text( "Комментарий")
 		+e.INPUT.btn.btn.btn-block.btn-warning.mb-4(type="submit" value="Рассчитать") 
 		+polite()
-	// #modal-call
+	// #modal-img
+
 	// modal

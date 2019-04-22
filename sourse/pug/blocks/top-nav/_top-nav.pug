@@ -14,6 +14,19 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav
 		.container
-			+mnu()
-					
+			+e.logo
+				img(src="img/logo.svg", alt="")
+			+e.UL.nav
+				+e.LI.item
+					+e.A.link--js(href="#" data-slide="1") о нас
+				
+				+e.LI.item
+					+e.A.link--js(href="#" data-slide="3") портфолио
+				
+				+e.LI.item
+					+e.A.link--js(href="#" data-slide="5") услуги
+				
+				+e.LI.item
+					+e.A.link--js(href="#" data-slide="6") контакты
+				
 	// end top-nav

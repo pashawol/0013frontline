@@ -1,14 +1,29 @@
 .modal-win {
 	display: block;
 	position: relative;
-	.modal-content {
-		// max-width: 485px;
-		// padding-right: 40px 15px;
+	width: rem(566px); 
+	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.3);
+	border-radius: rem(25px);
+	border: 1px solid #d2d2d2;
+	background-color: #ffffff;
+	padding: rem(60) rem(40) rem(40);
+	margin-left: auto;
+	margin-right: auto;
+	img{
+		max-width: 100%;
+		margin-bottom: 30px;
 	}
 	.mfp-close {
-		color: $primary;
+		// color: $primary;
+		border: 1px solid  ;
+		width: rem(40);
+		height: rem(40);
+		top: rem(15);
+		right: rem(15);
+		line-height: rem(40);
 		font-size: 40px;
 		font-weight: 100;
+		opacity: 0.5;
 	}   
 }
 
