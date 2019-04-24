@@ -8,6 +8,12 @@
 
 } 
 .stand{
+  width: rem(1206px);
+  height: rem(922);
+  >img{
+    height: 100%;
+    width: 100%;
+  }
   @include a-cent(x);
   top: rem(160);
    
@@ -18,7 +24,7 @@
    
     position: absolute;
     // z-index: -1;
-    left: rem(838);
+    left: rem(856);
     top: rem(22);
     z-index: 5;
     background-size: 100% 100%;
