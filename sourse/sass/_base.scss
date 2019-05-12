@@ -6,7 +6,7 @@ html {
 	height: 100%;
 	// @include media-breakpoint-up(sm) {
 
-	// 	margin-left: calc(100vw - 100%);
+	// 	margin-left: calc(100% - 100%);
 	// 	margin-right: 0;
 	// }
 
@@ -563,13 +563,52 @@ animation:move-clouds-back 200s linear infinite;
 }
 
 @media   (max-aspect-ratio: 2 / 3) {
-	.main-wrapper{
+	.top-nav{
 		opacity: 0;
+	}
+	.main-wrapper{
+		// opacity: 0;
+	 
+	}
+	body{
+		&::before{
+			display: flex;
+		}
 	}
 }
 
 	@media  (max-aspect-ratio: 1366 / 1024)   {
-		.main-wrapper{
+		.top-nav{
 			opacity: 0;
 		}
+		body{
+			&::before{
+				display: flex;
+			}
+		}
 	} 
+
+	body{
+		// opacity: 0;
+		// 
+		&::before{
+			content: 'Поверните экран или разверните браузер';
+			// @include a-cent;
+			display: none;
+			position: absolute;
+			color: #ffffff;
+			font-size: 5rem;
+			z-index: 200;
+			background-color: #000000;
+			left: 0;
+			top: 0;
+			width: 100vw;
+			text-align: center;
+			padding: rem(10);
+			height: 100vh;
+			
+			justify-content: center;
+			align-items: center;
+
+		}
+	}
