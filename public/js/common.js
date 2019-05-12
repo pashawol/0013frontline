@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
 		freeMode: true, 
 		mousewheel: true,
 		keyboard: true,
-		// initialSlide: 3,
+		initialSlide: 1,
 		on: {
 			init: function () {
 				/* do something */
@@ -74,12 +74,14 @@ jQuery(document).ready(function ($) {
 			setTimeout(() => {
 				
 				$(".tv").addClass("tv--active");
+				$(".cat--2").addClass("cat--active");
 			}, 200);
 		}  
 		else{ 
 			setTimeout(() => {
 				
 				$(".tv").removeClass("tv--active");
+				$(".cat--2").removeClass("cat--active");
 			}, 200);
 		}
 		

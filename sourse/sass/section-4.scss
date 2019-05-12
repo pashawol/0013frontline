@@ -6,13 +6,16 @@
   pointer-events: none;
 }
 
+.window--2{
+  pointer-events: all !important;
+}
 .slider-wrapper{
   position: absolute;
    
    width: rem(800px); 
     @include a-cent(x);
     top: rem(208px);
-    z-index: 2;
+    z-index:4;
     &::after,
     &::before{
       content: '';

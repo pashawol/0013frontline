@@ -15,7 +15,8 @@
     width: 100%;
   }
   @include a-cent(x);
-  top: rem(160);
+  top: 16%;
+  // bottom: 0;
    
  
   &::before{
