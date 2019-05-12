@@ -58,10 +58,16 @@ jQuery(document).ready(function ($) {
 	});
 	swiper.on('slideChange', function () {
 		if (swiper.activeIndex == 0) {
+			// setTimeout(() => {
+				
+			// 	$(".moon-block").addClass("moon-block--active");
+			// }, 200);
+			
 			setTimeout(() => {
 				
-				$(".moon-block").addClass("moon-block--active");
+				$("ray--down").addClass("ray--active");
 			}, 200);
+
 		}  
 		else{ 
 			setTimeout(() => {
@@ -74,14 +80,14 @@ jQuery(document).ready(function ($) {
 			setTimeout(() => {
 				
 				$(".tv").addClass("tv--active");
-				$(".cat--2").addClass("cat--active");
+			
 			}, 200);
 		}  
 		else{ 
 			setTimeout(() => {
 				
 				$(".tv").removeClass("tv--active");
-				$(".cat--2").removeClass("cat--active");
+				// $(".cat--2").removeClass("cat--active");
 			}, 200);
 		}
 		
@@ -97,6 +103,20 @@ jQuery(document).ready(function ($) {
 				$(".cat--3").removeClass("cat--down");
 			}, 200);
 		}
+		
+		if (swiper.activeIndex == 3) {
+			setTimeout(() => {
+				
+				$(".cat--4").addClass("cat--go");
+			}, 200);
+		}  
+		else{ 
+			setTimeout(() => {
+				
+				$(".cat--4").removeClass("cat--go");
+			}, 200);
+		}
+
 		
 		if (swiper.activeIndex == 5) {
 			setTimeout(() => {
@@ -207,3 +227,17 @@ jQuery(document).ready(function ($) {
 		
 		//methods
 		// fullpage_api.setAllowScrolling(false);
+	var picturesItem = $('.pictures__item')
+	var cat2 =  document.querySelector('.cat--2')
+
+	$('.pictures__item').hover( function() {
+		cat2.classList.add('cat--active')
+	}, function() {
+		cat2.classList.remove('cat--active')
+	})
+
+
+	// $("").hover(function() {
+
+	// 	$(".cat--2").addClass("cat--active");
+	// })

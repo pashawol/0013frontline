@@ -26,15 +26,16 @@
   @include a-cent();
   height: 100vh;
   z-index: 2;
+  height: 100vh;
   &--1{
     width: rem(2433);
-    height: rem(1200);
-    min-height: 100vh;
+    // height: rem(1200);
+    // min-height: 100vh;
   }
   &--2{
     width: rem(2433);
-    height: rem(1200);
-    min-height: 100vh;
+    // height: rem(1200);
+    // min-height: 100vh;
   }
   &--1{
   pointer-events: none;
@@ -117,6 +118,9 @@
   100% { opacity: 0;     } 
   // 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
 }
+
+
+
 
 
 .room{ 
@@ -264,8 +268,22 @@
    }
  }
 
- .cat{
+ 
+@keyframes cat-active { 
+  // 0% {    } 
    
+  // 50% {     } 
+
+  0% { @include transform(  rotate(10deg));   } 
+  49% { @include transform(  rotate(10deg));    } 
+  50% { @include transform(  rotate(0deg));     }
+  100% { @include transform(  rotate(0deg));     } 
+}
+ 
+ .cat{
+    &--active{
+    animation: cat-active 1s  linear  2 ;
+   }
      &--3{
 
        top: rem(252px);

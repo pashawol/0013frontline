@@ -6,7 +6,9 @@
 }
 .room{
    &--6{
-    //  top: 0;
+     top: 0;
+    //  transform: 
+    @include a-cent(x)
      width: rem(1920 *.86);
      height: rem(1152 *.86);
      margin-left: rem(240);
@@ -37,10 +39,11 @@
    &--6{
      margin-left: rem(-100);
      top: 0;
-      @include a-cent(x)
+      @include a-cent(x);
      >img{
        width: rem(2480);
-       height: 99vh;
+       height: 102vh;
+      //  min-height: rem(100);
      }
    }
  }

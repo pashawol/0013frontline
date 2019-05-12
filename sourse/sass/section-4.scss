@@ -4,10 +4,15 @@
   bottom: rem(160px);
   left: rem(400px);
   pointer-events: none;
+  z-index: -2;
 }
 
 .window--2{
   pointer-events: all !important;
+  >img{
+    position: relative;
+    // z-index: 4;
+  }
 }
 .slider-wrapper{
   position: absolute;
@@ -22,17 +27,18 @@
       position: absolute;
       top: 0;
       pointer-events: none;
-      height: 100%;
+      height: 110%;
       width: rem(440);
       z-index: 2;
+      top: -5%;
     }
     &::after{
-      left: 100%;
+      left: calc(100% - #{rem(5px)});
       background-image: linear-gradient(to left, rgba(234,230,220,1) 50%,rgba(234,230,220,0) 100%);
     }
     &::before{
       // left: 0;
-      right: 100%;
+      right: calc(101% + #{rem(25px)});
       background-image: linear-gradient(to right, rgba(234,230,220,1) 50%,rgba(234,230,220,0) 100%);
     }
 }
@@ -76,4 +82,32 @@
   }
 
 
+}
+.cat--go{
+
+  // margin-left: 35%;
+  animation: cat-go 20s  steps(10,end)  infinite;
+  img{
+    position: relative;
+    // animation: cat-active-go 1s  linear  infinite 500ms;
+  }
+}
+@keyframes cat-active-go { 
+  // 0% {    } 
+   
+  // 50% {     } 
+
+  0% { @include transform(  rotate(5deg));   } 
+  49% { @include transform(  rotate(5deg));    } 
+  50% { @include transform(  rotate(-5deg));     }
+  100% { @include transform(  rotate(-5deg));     } 
+}
+ 
+
+@keyframes cat-go {
+0% { margin-left: 0;   } 
+// 49% { margin-left: 35%;    } 
+50% { margin-left: 35%;     }
+100% { margin-left: 0;    } 
+// 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
 }

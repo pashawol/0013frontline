@@ -562,31 +562,58 @@ animation:move-twink-back 200s linear infinite;
 animation:move-clouds-back 200s linear infinite;
 }
 
-@media   (max-aspect-ratio: 2 / 3) {
-	.top-nav{
-		opacity: 0;
-	}
-	.main-wrapper{
-		// opacity: 0;
-	 
-	}
-	body{
-		&::before{
-			display: flex;
-		}
-	}
-}
+// @media   (max-aspect-ratio: 2 / 3) {
+// 	body{
+// 		// opacity: 0;
+// 		&::before{
+// 		// opacity: 1;
+// 		display: flex;
+// 		}
+// 	}
+// }
 
-	@media  (max-aspect-ratio: 1366 / 1024)   {
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) 
+// and (orientation : portrait)
+// and (-webkit-min-device-pixel-ratio: 1)  {
+// 		.top-nav{
+// 			opacity: 0;
+// 		}
+// 		body{
+// 			// opacity: 0;
+// 			&::before{
+// 				// opacity: 1;
+// 				display: flex;
+// 			}
+// 		}
+// 	} 
+	
+	@media    (orientation : portrait)  {
 		.top-nav{
 			opacity: 0;
 		}
 		body{
+			// opacity: 0;
 			&::before{
+				// opacity: 1;
 				display: flex;
 			}
 		}
 	} 
+	@media  (min-aspect-ratio: 1366 / 600)   {
+		.top-nav{
+			opacity: 0;
+		}
+		body{
+			// opacity: 0;
+			&::before{
+				// opacity: 1;
+				display: flex;
+			}
+		}
+	} 
+
 
 	body{
 		// opacity: 0;
