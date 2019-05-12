@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
 		freeMode: true, 
 		mousewheel: true,
 		keyboard: true,
-		initialSlide: 1,
+		// initialSlide: 1,
 		on: {
 			init: function () {
 				/* do something */
