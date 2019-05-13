@@ -18,7 +18,7 @@
   @include a-cent(x);
   &--back{
     // margin-right: 5%;
-    margin-left: -5%;
+    margin-left: -9%;
     z-index: -1;
   }
   img{
@@ -97,19 +97,46 @@
   // display: none;
   // z-index: 2;
   &--down{
-    top: rem(-125px);
-    left: 14%;
+    top: rem(-130px);
+    left: 13.5%;
     z-index: 2;
-   >img{
+    >img{
+      opacity: 0;
       width: rem(1234 *.85);
       height: rem(1104 *.85);
+      opacity: 0;
+    }
+   
+  }
+  &--down.ray--active{
+    >img{
+      opacity: 1;
+
+      animation: ray-blick 1s  linear  2 500ms;
     }
   }
+  
+  &--up.ray--active{
+    >img{
+      opacity: 1;
+
+      animation: ray-blick 1s  linear  2 500ms;
+    }
+  }
+  &--logo.ray--active {
+    >img{
+      opacity: 1;
+
+      // animation: ray-blick 1s  linear  1 5000ms;
+    }
+  }
+
   &--logo{
     top: rem(100);
     // left: rem(110);
     right: rem(95);
     img{
+      opacity: 0;
       width: rem(354);
       height: rem(255); 
     }
@@ -121,6 +148,7 @@
     top: rem(-145);
     z-index: -1;
     >img{
+      opacity: 0;
       position: relative;
       z-index: -2;
       width: rem(941);
@@ -130,7 +158,7 @@
 
 }
 
-@keyframes moon-img-blick {
+@keyframes ray-blick {
   0% { opacity: 0;   } 
   49% { opacity: 0;    } 
   50% { opacity: 1;     }
@@ -139,15 +167,48 @@
 }
 
 
+$stl: 160;
+$stt: 70%;
 .cat{
   position: absolute;
   &--1{
     bottom: rem(465px);
     left: 65%;
+    z-index: -12;
     img{
       width: rem(229px);
       height: rem(189px);
+    } 
+    &:not(.cat--show){
+
+      transform: translate(#{rem($stl)}, $stt);
     }
+    // animation-fill-mode: forwards;
   }
+}
+
+ 
+.cat--show{
+  transform: none;
+  animation-fill-mode: both;
+  animation: cat-show 5s  steps(1,end)  1;
+}
+
+@keyframes cat-show {
+  0% { transform: translate(#{rem($stl)}, $stt);   } 
+  10% { transform: translate(#{rem($stl - 10)}, ($stt - 5%));} 
+  20% { transform: translate(#{rem($stl - 20)}, ($stt - 15%));} 
+  30% { transform: translate(#{rem($stl - 35)}, ($stt - 25%));} 
+  40% { transform: translate(#{rem($stl - 45)}, ($stt - 30%));} 
+  50% { transform: translate(#{rem($stl - 55)}, ($stt - 35%));} 
+  60% { transform: translate(#{rem($stl - 65)}, ($stt - 40%));} 
+  70% { transform: translate(#{rem($stl - 75)}, ($stt - 45%));} 
+  // 75% { transform: translate(#{rem($stl - 85)}, ($stt - 50%));} 
+  80% { transform: translate(#{rem($stl - 95)}, ($stt - 55%));} 
+  // 85% { transform: translate(#{rem($stl - 105)}, ($stt - 60%));} 
+  90% { transform: translate(#{rem($stl - 115)}, ($stt - 65%));} 
+  100% { transform: translate(#{rem($stl - 125)}, ($stt - 70%));} 
+  
+  // 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
 }
 // @import "media";// Всегда в конце
