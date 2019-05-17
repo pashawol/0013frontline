@@ -34,19 +34,7 @@
     } 
  }
 
- .window{
-   pointer-events: none;
-   &--6{
-     margin-left: rem(-100);
-     top: 0;
-      @include a-cent(x);
-     >img{
-       width: rem(2480);
-       height: 102vh;
-      //  min-height: rem(100);
-     }
-   }
- }
+
 
 
 
@@ -191,4 +179,68 @@
 
 .hidden{
   display: none !important; 
+}
+.window{
+  pointer-events: none;
+  &--6{
+    margin-left: rem(170);
+    top: 0;
+     @include a-cent(x);
+    >img{
+      width: rem(1974);
+      height: 98vh;
+     //  min-height: rem(100);
+    }
+  }
+}
+
+.signboards{
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  z-index: 20;
+  height: 100%;
+  img{
+    width: 100%;
+    height: 100%;
+    @include a-cent;
+    &:nth-child(2){
+      // display: none;
+      opacity: 0;
+      animation: signboards 2.5s  linear  infinite ;
+    }
+  }
+  &__item{
+    // position: relative;
+    position: absolute;
+  }
+  &__item--1{
+    width: rem(1118px);
+    height: rem(873px);
+    right: rem(-330);
+    bottom: rem(160px);
+    img{
+
+       
+    }
+  }
+  
+  &__item--2{
+    width: rem(452px);
+    height: rem(546px);
+    right: rem(-84);
+    bottom: rem(20px);
+    img{ 
+    }
+  }
+
+}
+
+
+@keyframes signboards {
+  0% { opacity: .8;   } 
+  49% { opacity: .8;    } 
+  50% { opacity: 0;     }
+  100% { opacity: 0;     } 
+  // 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
 }

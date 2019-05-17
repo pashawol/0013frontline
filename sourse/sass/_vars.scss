@@ -36,7 +36,7 @@ $small: rem(14);
     @include transform(translateY(-50%));
   }
 }
-
+ 
 
 @mixin roww($a){
 	margin-left: rem(-$a);

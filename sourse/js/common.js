@@ -42,20 +42,24 @@ jQuery(document).ready(function ($) {
 		})
 	})
 	JSCCommon.inputMask();
+	
 	function animeteRays() {
 		setTimeout(() => { 
-			document.querySelector(".ray--down").classList.add("ray--active"); 
+			var prld = $('.preloader--js')
+			prld.delay(150).fadeOut().find('i').fadeOut(); 
+			setTimeout(() => { 
+				document.querySelector(".ray--down").classList.add("ray--active"); 
+			}, 500);
+			
+			setTimeout(() => { 
+				document.querySelector(".ray--up").classList.add("ray--active");
+			}, 2800);
+			
+			setTimeout(() => { 
+				document.querySelector(".ray--logo").classList.add("ray--active");
+				document.querySelector(".cat--1").classList.add("cat--show");
+			}, 5500);
 		}, 200);
-		
-		setTimeout(() => { 
-			document.querySelector(".ray--up").classList.add("ray--active");
-		}, 2800);
-		
-		setTimeout(() => { 
-			document.querySelector(".ray--logo").classList.add("ray--active");
-			document.querySelector(".cat--1").classList.add("cat--show");
-		}, 5500);
-
 
 	} 
 	$(window).on('load',function() {

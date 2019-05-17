@@ -9,6 +9,12 @@ block title
 
 block pagecontent
 	//- +header()
+	+b.preloader--js.box
+		+b.cat-preloader
+			+e.body
+			+e.body
+			+e.tail
+			+e.head
 	+top-nav
 	.stars
 	.twinkling
@@ -147,6 +153,15 @@ block pagecontent
 							
 					+b.window--6
 						img(src="img/window-3.png", alt="")
+						+b.signboards
+							+e.item--1
+								img(src="img/signboard-1.png", alt="")
+								img(src="img/signboard-1-light.png", alt="") 
+							+e.item--2
+								img(src="img/signboard-2.png", alt="")
+								img(src="img/signboard-2-light.png", alt="")
+
+
 						+e.inner
 						  
 					
