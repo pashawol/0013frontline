@@ -5,8 +5,39 @@ var JSCCommon = {
 	inputMask: function () {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+]7[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+7(999)999-99-99");
-	}
+	},
+		// табы  . 
+		tabscostume: function (tab) {
+			var params = {
+				slidesPerView: 3,
+				spaceBetween: 30,
+				loop: true,
+				// freeMode: true, 
+				centeredSlides: true,
+				centerInsufficientSlides: true,
+				// initialSlide: 1,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
 
+			}
+			
+			var swiperCarusel = new Swiper($(".tabs__content.active").find('.slider--js'), params); 
+
+			$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+				$(this)
+					.addClass('active').siblings().removeClass('active')
+					.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
+					.eq($(this).index()).addClass('active').fadeIn(function(){
+
+						var slider = $(this).find('.slider--js'); 
+						slider.hasClass("swiper-container-initialized") 
+						? swiperCarusel.update()
+						: swiperCarusel = new Swiper(slider, params)
+					});
+			});
+		},
 };
 
 // JSCCommon.LazyFunction();
@@ -14,7 +45,7 @@ var JSCCommon = {
 
 jQuery(document).ready(function ($) {
 
- 
+	JSCCommon.tabscostume('tabs');
 	
 	$(document).on('click', ".popup-with-move-anim", function(e){
 		e.preventDefault();
@@ -71,7 +102,7 @@ jQuery(document).ready(function ($) {
 		freeMode: true, 
 		mousewheel: true,
 		keyboard: true,
-		// initialSlide: 1,
+		initialSlide:6,
 		on: {
 			init: function () {
 				/* do something */
@@ -149,16 +180,28 @@ jQuery(document).ready(function ($) {
 		}
 		
 		
-		if (swiper.activeIndex == 6) {
+		if (swiper.activeIndex >5 ) {
 			setTimeout(() => {
 				
 				$(".stand").addClass("stand--active");
 			}, 200);
+
+			setTimeout(() => { 
+				document.querySelector(".ray-lamp--1").classList.add("active"); 
+				setTimeout(() => { 
+					document.querySelector(".ray-lamp--2").classList.add("active"); 
+					document.querySelector(".ray-lamp--4").classList.add("active"); 
+					setTimeout(() => { 
+						document.querySelector(".ray-lamp--3").classList.add("active");  
+						}, 2500); 
+				}, 2500);
+			}, 500);
 		}  
 		else{ 
 			setTimeout(() => {
 				
 				$(".stand").removeClass("stand--active");
+				$(".ray-lamp--1, .ray-lamp--2, .ray-lamp--3, .ray-lamp--4").removeClass("active");
 			}, 200);
 		}
 
@@ -171,19 +214,7 @@ jQuery(document).ready(function ($) {
 		swiper.slideTo(slide, 600, false);
 	})
 
-	var swiperCarusel = new Swiper('.slider--js', { 
-		slidesPerView: 3,
-		spaceBetween: 30,
-		loop: true,
-		// freeMode: true, 
-		centeredSlides: true,
-		centerInsufficientSlides: true,
-		// initialSlide: 1,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-	})
+
 
 
 	$(".servises__item--sm").click(function(){
@@ -222,6 +253,10 @@ jQuery(document).ready(function ($) {
 		
 				});
 	})
+	for (var i = 1; i<= 16; i++) {
+
+		$('<div class="server-lamp server-lamp--' + i + '"></div>').prependTo('.room--6')
+	}
 });
 
 

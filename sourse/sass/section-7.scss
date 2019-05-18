@@ -1,12 +1,73 @@
  
  .s-section--7{
   background-image: url(../img/bg-contact.png);
-  background-size: cover;
-  background-position: left top;
+  background-size:contain;
+  background-position: left 100%;
+  background-repeat: no-repeat;
 }
 .contact-bg{
 
 } 
+
+@keyframes ray-stand {
+  0% { opacity: .7;   } 
+  30% { opacity: .7;   } 
+  31% { opacity: 0;    } 
+  60% { opacity: 0;    } 
+  61% { opacity: 0.7;    } 
+  100% { opacity: 0.7;     }
+  // 100% { opacity: 0;     } 
+  // 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
+}
+
+ .ray-lamp{
+  background-image:  url(../img/ray-lamp.png);
+   
+    position: absolute;
+    // z-index: -1;
+    top: rem(22);
+    z-index: 5;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    opacity: 0;
+    width: rem(216 * .99);
+    height: rem(272 * .99);
+    &.active{
+      opacity: 1;
+      
+      pointer-events: none;
+      animation-fill-mode: forwards;
+      animation-fill-mode: both;
+    }
+    animation: ray-stand 5s    linear  4 ;
+    &--1{
+      
+      left: rem(136);
+      transform: rotateY(180deg);
+    } 
+  
+  
+  &--2{
+    
+    left: rem(366);
+    transform: rotateY(180deg); 
+  }
+  
+  
+  &--3{
+    
+    left: rem(628); 
+  }
+  
+  
+  &--4{ 
+    left: rem(856); 
+      // animation: ray-stand 1s    linear    3 500ms;
+    }
+
+}
+
 .stand{
   width: rem(1206px);
   height: rem(922);
@@ -21,24 +82,10 @@
  
   &::before{
     content: '';
-    background-image:  url(../img/ray-lamp.png);
-   
-    position: absolute;
-    // z-index: -1;
-    left: rem(856);
-    top: rem(22);
-    z-index: 5;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: top center;
-    opacity: 0;
-    // opacity: .7;
-    width: rem(216 * .99);
-    height: rem(272 * .99);
+    
   }
   &--active{
     &::before{
-      animation: tv-blick 1s  linear  2 500ms;
       opacity: .8;
     }
   }
@@ -48,12 +95,7 @@
     pointer-events: none;
   }
 }
-.cat--7{
-  left: rem(-45);
-  top: rem(-80);
 
-  z-index: 3;
-}
 .map-wrap{
   position: absolute;
   @include a-cent(x);
@@ -113,4 +155,36 @@
         height: rem(47);
       }
     }
+}
+
+.cat--7{
+  left: rem(-32);
+  top: rem(-73); 
+  z-index: 3;
+  position: absolute;
+
+  &::before{
+    content: url(../img/tail-1.png);
+    // animation: tail  5s  steps(1,end)  linear;
+    animation: tail 5s  steps(1,end)  infinite;
+    z-index: -1;
+    position: absolute;
+    top: 55%;
+    left: 42%;
+   
+  }
+}
+
+@keyframes tail { 
+  0% {content: url(../img/tail-1.png); top: 55%;
+    left: 42%; } 
+  50% {content: url(../img/tail-2.png);  top: 60%;
+    left: 30%; } 
+  70% {content: url(../img/tail-3.png);  top: 65%;
+    left: 6%; } 
+  80% {content: url(../img/tail-2.png);  top: 60%;
+    left: 30%; } 
+  100% {content: url(../img/tail-3.png);  top: 65%;
+    left: 6%; } 
+   
 }

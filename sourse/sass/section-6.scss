@@ -7,6 +7,8 @@
 .room{
    &--6{
      top: 0;
+    // top: auto;
+    // bottom: rem(40);
     //  transform: 
     @include a-cent(x)
      width: rem(1920 *.86);
@@ -173,6 +175,20 @@
 .cat--6{
   @include a-cent(x);
   top: rem(500);
+
+  &::before{
+    content: '';
+    @include a-cent;
+    margin-left: rem(-40);
+    // left: 50%;
+    // top: 40%;
+    margin-top: rem(-80);
+    width: rem(1);
+    height:  rem(1);
+    border-radius: 50%;
+    box-shadow: 0 0 rem(65em) rem(46em) rgba($color: #fff, $alpha: .6);
+    animation: tv-blick 6s  linear  infinite  ;
+  }
 }
 
  
@@ -183,11 +199,11 @@
 .window{
   pointer-events: none;
   &--6{
-    margin-left: rem(170);
+    margin-left: rem(220);
     top: 0;
      @include a-cent(x);
     >img{
-      width: rem(1974);
+      width: rem(2174);
       height: 98vh;
      //  min-height: rem(100);
     }
@@ -244,3 +260,155 @@
   100% { opacity: 0;     } 
   // 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
 }
+@keyframes server-lamp {
+  0% { opacity: 0;   } 
+  49% { opacity: 0;    } 
+  50% { opacity: 1;     }
+  100% { opacity: 1;     } 
+  // 100% { box-shadow: 0 0 5em 6em rgba($color: #fff, $alpha: 0); }
+}
+
+
+
+.server-lamp{
+  position: absolute;
+  border-radius: 50%;
+  background-color: green;
+  width: rem(6);
+  height:  rem(6);
+  animation-name: server-lamp;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  animation-duration: 2s;
+  // animation-fill-mode: both;
+  // opacity: 0;
+
+     &--2,
+     &--3,
+     &--15,
+     &--6,
+     &--10{
+       animation-delay: .8s; 
+      }
+      
+      &--14,
+  &--12,
+  &--8{
+    animation-delay: .5s; 
+  }
+
+  
+      &--4,
+  &--16,
+  &--13,
+  &--8{
+    animation-delay: 1s; 
+  }
+
+
+  &--1{
+    left: rem(120px);
+    top: rem(500) ;
+  }
+  
+  &--2{
+    // left: rem(100px);
+    left: rem(200px);
+    top: rem(580) ;
+    background-color: red;
+  }
+  
+  &--3{
+    left: rem(160px);
+    top: rem(450) ;
+    background-color: red;
+  }
+  
+  &--4{
+    left: rem(120px);
+    top: rem(690) ;
+    background-color: red;
+  }
+  
+  &--5{
+    left: rem(60px);
+    top: rem(700) ;
+    // background-color: red;
+  }
+  
+  &--6{
+    left: rem(70px);
+    top: rem(400) ;
+    background-color: red;
+  }
+  
+  &--16{
+    left: rem(150px);
+    top: rem(500) ;
+  }
+  
+  &--7{
+    // left: rem(100px);
+    left: rem(60px);
+    top: rem(410) ;
+    background-color: red;
+  }
+  
+  &--8{
+    right: rem(130px);
+    top: rem(480) ;
+    background-color: red;
+    // background-color: red;
+  }
+  
+  &--9{
+    right: rem(60px);
+    top: rem(670) ;
+    background-color: red;
+  }
+  
+  &--10{
+    right: rem(60px);
+    top: rem(400) ;
+    // background-color: red;
+  }
+  
+  &--11{
+    right: rem(160px);
+    top: rem(500) ;
+    background-color: red;
+  }
+  
+  &--12{
+    right: rem(120px);
+    top: rem(700) ;
+    background-color: red;
+  }
+  
+  &--13{
+    right: rem(140px);
+    top: rem(700) ;
+    // background-color: red;
+  }
+  
+   
+  &--14{
+    right: rem(80px);
+    top: rem(800) ;
+    background-color: red;
+  }
+  
+  &--15{
+    left: rem(160px);
+    top: rem(700) ;
+    background-color: red;
+  }
+
+}
+
+// @keyframes front-window { 
+//   0% { opacity: 1;   } 
+//   49% { opacity: 1;    } 
+//   50% { opacity: 0;     }
+//   100% { opacity: 0;     } 
+// }

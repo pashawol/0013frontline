@@ -42,7 +42,12 @@ block pagecontent
 							img(src="img/ray-down.png", alt="")
 							+b.ray--logo
 								img(src="img/ray-logo.png", alt="")
-						img(src="img/city-front.svg", alt="")
+						+b.front-img
+							img(src="img/city-front-1.svg", alt="")
+							img(src="img/city-front-2.svg", alt="")
+							img(src="img/city-front-3.svg", alt="")
+							img(src="img/city-front-4.svg", alt="")
+						//- img(src="img/city-front.svg", alt="")
 					
 					
 			+b.s-section--2.swiper-slide
@@ -98,14 +103,30 @@ block pagecontent
 					+b.window--2
 						img(src="img/window-2.png", alt="")
 						+e.inner
-							.slider-wrapper
-								+b.slider--js.swiper-container 
-									.swiper-wrapper
-										- for (var x = 0; x < 5; x++)
-											.swiper-slide
-												+e.item.img-bg.popup-with-move-anim(href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni")
-													img(src="img/slide.png", alt="")
-									+arrow()
+							+e.wrapper
+								+b.tabs
+									.tabs__caption
+										.tabs__btn.active все работы 
+										.tabs__btn Креатив
+										.tabs__btn Видео
+										.tabs__btn Диджитал
+										.tabs__btn Презентации
+									+e.wrap
+										mixin cont()
+											.tabs__content&attributes(attributes)
+												.slider-wrapper
+													+b.slider--js.swiper-container 
+														.swiper-wrapper
+															- for (var x = 0; x < 5; x++)
+																.swiper-slide
+																	+e.item.img-bg.popup-with-move-anim(href="#modal-img" style="background-image: url(img/slide.png);" data-text="orem, ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus optio illo dolor velit placeat, vitae excepturi deleniti quis nobis culpa enim adipisci laudantium? Veritatis optio iusto, est nihil laborum suscipit fuga tempora facilis voluptatum consectetur minima eaque temporibus architecto officia asperiores necessitatibus velit enim. Quasi error pariatur aperiam molestiae exercitationem eaque quo aliquam officia perferendis ullam consectetur maiores itaque numquam, magni")
+																		img(src="img/slide.png", alt="")
+														+arrow()
+										+cont()(class="active")
+										+cont()
+										+cont()
+										+cont()
+										+cont()
 							+b.cat--4
 								img(src="img/cat-4.svg", alt="")
 					+b.back-city--4
@@ -169,7 +190,13 @@ block pagecontent
 					//- 	img(src="img/cat-2.svg", alt="")
 					
 			+b.s-section--7.swiper-slide 
+				+b.moon-block--last
+					img(src="img/moon.svg", alt="")
 				+b.stand
+					+b.ray-lamp--1
+					+b.ray-lamp--2
+					+b.ray-lamp--3
+					+b.ray-lamp--4
 					img(src="img/stand.png", alt="")
 					+b.map-wrap
 						+e.text-block
