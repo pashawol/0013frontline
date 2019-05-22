@@ -83,6 +83,7 @@
      background-image: url(../img/ramka.png)   ;
      top: rem(-2);
      pointer-events: none;
+     z-index: 3;
     //  left: 10px;
    }
 
@@ -115,8 +116,7 @@
   }
   
   &__item{
-    position: relative;
-    z-index: -1;
+    position: relative; 
     &--sm{
     height: rem(170);
     cursor: pointer;
