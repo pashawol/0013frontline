@@ -47,10 +47,45 @@
  .servises{
    margin-left: auto;
    margin-right: auto;
-   width: rem(1180);
-   top: rem(120);
+   width: rem(1140);
+   height: rem(602);
+   top: rem(100);
    position: absolute;
+   background-size: 100% 100%;
+   background-position: top center;
    @include a-cent(x);
+ 
+   &::before{
+     content: '';
+     position: absolute;
+     @include a-cent(x);
+     width: rem(1127);
+     height: rem(602);
+     background-repeat: no-repeat;
+     background-position:   top center;
+     background-size:    rem(1180) rem(602);
+     background-image:   url(../img/servises-bg.png)   ;
+     top: rem(-2);
+     pointer-events: none;
+     z-index: -1;
+    //  left: 10px;
+   }
+   
+   &::after{
+     content: '';
+     position: absolute;
+     @include a-cent(x);
+     width: rem(1127);
+     height: rem(602);
+     background-repeat: no-repeat;
+     background-position:   top center;
+     background-size: rem(1120) rem(494),    ;
+     background-image: url(../img/ramka.png)   ;
+     top: rem(-2);
+     pointer-events: none;
+    //  left: 10px;
+   }
+
    &__row{
       display: flex;
    }
@@ -81,20 +116,80 @@
   
   &__item{
     position: relative;
-    
+    z-index: -1;
     &--sm{
-    height: rem(150);
+    height: rem(170);
     cursor: pointer;
     &:nth-child(2){
-      height: rem(145);
+      height: rem(155);
       
     }
- 
+    
+  }
+}
+&__item{
+  &::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 101%;
+    background-size: 229px 520px;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  // z-index: -1;
+}
+&__col--left &__item{
+  &::before{
+
+    background-image:  url(../img/tv-left.gif);
+  }
+}
+&__col--right &__item{
+  &::before{
+    left: auto;
+    width: 220px;
+    right: 0;
+    
+    background-image:  url(../img/tv-right.gif);
+  }
+}
+
+&__col--right &__item:nth-child(1),
+&__col--left &__item:nth-child(1){
+  &::before{
+
+    background-position: left top;
+  }
+   
+  }
+  &__col--right &__item:nth-child(2),
+  &__col--left &__item:nth-child(2) {
+    &::before{ 
+      background-position: left center; 
+      top: rem(-5); 
     }
   }
+  &__col--right &__item:nth-child(3),
+  &__col--left &__item:nth-child(3) {
+    &::before{
+      top: rem(-12);
+      background-position: left bottom; 
+      
+    }
+  }
+  
+
+ 
+ 
+ 
+ 
+
   &__col--left &__item:nth-child(1) img{
     
-    @include transform(translateX(-50%) translateY(-50%) skewX(4deg)   rotate(5deg));
+    @include transform(translateX(-50%) translateY(-50%) skewX(8deg)   rotate(8deg));
   }
   
   &__col--left &__item:nth-child(2) img{
