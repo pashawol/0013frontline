@@ -102,7 +102,7 @@ jQuery(document).ready(function ($) {
 		freeMode: true, 
 		mousewheel: true,
 		keyboard: true,
-		initialSlide:6,
+		// initialSlide:6,
 		on: {
 			init: function () {
 				/* do something */
